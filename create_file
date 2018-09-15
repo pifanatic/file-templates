@@ -9,6 +9,12 @@ function usage() {
 EOF
 }
 
+function error() {
+    printf "\033[;31m" # red
+    printf "\n$1\n"
+    printf "\033[0m"   # no color
+}
+
 if [ -z $1 ]; then
     usage
     exit 1
@@ -17,14 +23,14 @@ fi
 filename=$1
 
 if [ -f $filename ]; then
-    echo "File $filename already exists..."
+    error "File $filename already exists!"
     exit 1
 fi
 
 type=`echo $filename | cut -d '.' -f 2`
 
 if [ ! -f "templates/$type.tpl" ]; then
-    echo "No template found for filetype '$type'"
+    error "No template found for filetype '$type'"
     exit 1
 fi
 
