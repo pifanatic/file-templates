@@ -43,4 +43,4 @@ cp templates/$type.tpl "$filename"
 
 sed -i "s/<YEAR>/`date +%Y`/" $filename
 sed -i "s/<AUTHOR>/`git config --global user.name`/" $filename
-sed -i "s/<NAME>/$filename/" $filename
+sed -i "s|<NAME>|$filename|" $filename
