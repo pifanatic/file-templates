@@ -21,6 +21,22 @@ if [ -f $filename ]; then
     exit 1
 fi
 
+dir=`dirname $filename`
+
+if [ ! -d $dir ]; then
+    echo "The directory '$dir' does not exist."
+    echo "Do you want to create it? [Y/n] "
+
+    read choice
+
+    if [ "$choice" = "n" ]; then
+        exit 1
+    fi
+
+    mkdir -p $dir
+fi
+
+
 type=`echo $filename | cut -d '.' -f2`
 
 cp templates/$type.tpl "$filename"
