@@ -9,6 +9,11 @@ fi
 
 filename=$1
 
+if [ -f $filename ]; then
+    echo "File $filename already exists..."
+    exit 1
+fi
+
 type=`echo $filename | cut -d '.' -f2`
 
 cp templates/$type.tpl "$filename"
