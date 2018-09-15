@@ -52,6 +52,9 @@ fi
 
 cp templates/$type.tpl "$filename"
 
+cat templates/LICENSE.tpl >> $filename
+
 sed -i "s/<YEAR>/`date +%Y`/" $filename
 sed -i "s/<AUTHOR>/`git config --global user.name`/" $filename
 sed -i "s|<NAME>|$filename|" $filename
+
