@@ -12,3 +12,8 @@ file you are trying to create.
 ./create_file script.pl # creates a new Perl script file using templates/pl.tpl
 
 ```
+
+# License
+
+This software is licensed under the MIT License
+
