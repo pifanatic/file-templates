@@ -2,8 +2,15 @@
 
 # Create a new file from a template
 
+function usage() {
+    cat <<EOF
+
+    Usage: `basename $0` <FILE>
+EOF
+}
+
 if [ -z $1 ]; then
-    echo "No filename given."
+    usage
     exit 1
 fi
 
