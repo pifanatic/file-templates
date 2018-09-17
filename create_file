@@ -27,12 +27,16 @@ if [ -f $filename ]; then
     exit 1
 fi
 
+# get absolute path of script directory
+path=$(cd `dirname $0` && pwd)
+
 type=`echo $filename | cut -d '.' -f 2`
 
-if [ ! -f "templates/$type.tpl" ]; then
+if [ ! -f "$path/templates/$type.tpl" ]; then
     error "No template found for filetype '$type'"
     exit 1
 fi
+
 
 dir=`dirname $filename`
 
@@ -50,9 +54,9 @@ if [ ! -d $dir ]; then
 fi
 
 
-cp templates/$type.tpl "$filename"
+cp "$path"/templates/$type.tpl "$filename"
 
-cat templates/LICENSE.tpl >> $filename
+cat "$path"/templates/LICENSE.tpl >> $filename
 
 sed -i "s/<YEAR>/`date +%Y`/" $filename
 sed -i "s/<AUTHOR>/`git config --global user.name`/" $filename
