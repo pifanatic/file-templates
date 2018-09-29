@@ -8,3 +8,6 @@
     <h1><NAME></h1>
   </body>
 </html>
+<!--
+  <LICENSE>
+-->

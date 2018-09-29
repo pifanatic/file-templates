@@ -72,7 +72,8 @@ fi
 
 cp "$path"/templates/$type.tpl "$filename"
 
-cat "$path"/templates/LICENSE.tpl >> $filename
+sed -i "/<LICENSE>/r $path/templates/LICENSE.tpl" $filename
+sed -i "s/<LICENSE>//" $filename
 
 sed -i "s/<YEAR>/`date +%Y`/" $filename
 sed -i "s/<AUTHOR>/$author/" $filename

@@ -17,3 +17,4 @@ use warnings;
 
 =cut
 
+<LICENSE>
