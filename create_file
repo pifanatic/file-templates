@@ -54,7 +54,7 @@ if [ ! -d $dir ]; then
 fi
 
 
-author=`git config --global user.name`
+author=`git config user.name`
 
 if [ -z "$author" ]; then
     author=`whoami`
