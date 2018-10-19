@@ -15,6 +15,6 @@ use warnings;
 
 <AUTHOR>, <YEAR>
 
-=cut
-
+=head1 COPYRIGHT
 <LICENSE>
+=cut
