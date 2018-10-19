@@ -7,6 +7,8 @@ use warnings;
 
 =pod
 
+=encoding utf8
+
 =head1 DESCRIPTION
 
 <NAME>
