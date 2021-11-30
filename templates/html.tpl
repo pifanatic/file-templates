@@ -5,7 +5,9 @@
     <title><NAME></title>
   </head>
   <body>
-    <h1><NAME></h1>
+    <main>
+      <h1><NAME></h1>
+    </main>
   </body>
 </html>
 <!--
